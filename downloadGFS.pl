@@ -37,7 +37,7 @@
     
     $ftp = Net::FTP->new("ftp.ncep.noaa.gov", Debug => 0) or die "Cannot connect to ftp.ncep.noaa.gov: $@";
     
-    $ftp->login("anonymous",'sd19surf@gmail.com') or die "Cannot login ", $ftp->message;
+    $ftp->login("anonymous",'anonymous@gmail.com') or die "Cannot login ", $ftp->message;
     
     $ftp->binary;    
 
@@ -67,9 +67,11 @@
      #could open in wgrib2 at this point and create a structure will all of the data needed to create an extracted bulletin
      #store each parameter and then create a library of functions create more parameters if they aren't available.
      #gfs.t00z.pgrb2.0p25.f012
-    # system("c:/Users/Shawn/Downloads/wgrib2.exe $_ -match ':RH:2 m above ground:' -text rh.txt");
+    
     print "$_ is currently being processed\n";
-          system("c:/Users/Shawn/Downloads/wgrib2 $_ -s -lon 22 56 -lon 22 58 -lon 23 33 >> data.txt");
+    
+    # put the code you want to run here.
+          system("c:/Users/Downloads/wgrib2 $_ -s -lon 22 56 -lon 22 58 -lon 23 33 >> data.txt");
      }
      
      
