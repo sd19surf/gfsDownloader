@@ -1,4 +1,5 @@
     use Net::FTP;
+    use IPC::Open3;
     
     use Benchmark;
 
@@ -12,10 +13,10 @@
     $mon = sprintf("%02d",$mon + 1);
     
     $yearDir = "$year$mon";
-    $day = sprintf("%02d",$mday);
-    $hr = "00";
+    $day = sprintf("%02d",$mday );
+    $hr = "12";
     
-    @listOfHours = ("000","003","006","009","012","015","018","024");
+    @listOfHours = ("000","003","006","009","012","015","018","024","027","030","033","036","039","042","048");
     
     #Create a function here to download the information if doesn't exist.
     
@@ -37,9 +38,11 @@
     
     $ftp = Net::FTP->new("ftp.ncep.noaa.gov", Debug => 0) or die "Cannot connect to ftp.ncep.noaa.gov: $@";
     
-    $ftp->login("anonymous",'anonymous@gmail.com') or die "Cannot login ", $ftp->message;
+    $ftp->login("anonymous",'sd19surf@gmail.com') or die "Cannot login ", $ftp->message;
     
-    $ftp->binary;    
+    $ftp->binary;   
+	
+	print "$yearDir$day$hr/"; 
 
     $ftp->cwd("/pub/data/nccf/com/gfs/prod/gfs.$yearDir$day$hr/") or die "Cannot change working directory ", $ftp->message;
     
@@ -67,11 +70,11 @@
      #could open in wgrib2 at this point and create a structure will all of the data needed to create an extracted bulletin
      #store each parameter and then create a library of functions create more parameters if they aren't available.
      #gfs.t00z.pgrb2.0p25.f012
-    
+    # system("c:/Users/Shawn/Downloads/wgrib2.exe $_ -match ':RH:2 m above ground:' -text rh.txt");
     print "$_ is currently being processed\n";
-    
-    # put the code you want to run here.
-          system("c:/Users/Downloads/wgrib2 $_ -s -lon 22 56 -lon 22 58 -lon 23 33 >> data.txt");
+          #system("wgrib2 $_ -s -match ':CAPE:surface:' -undefine_val -9e20:1000 | wgrib2 -i $_ -csv $_.csv");
+          system("wgrib2 $_ -s -match ':TMP:surface:' -undefine_val -9e20:95 -grib_out c:/python27/scripts/jpp/grib2shape/ingrib/CENTCOM_DRAFT_TMP_$_.grb");
+	  system("wgrib2 $_ -s -match ':VIS:surface:' -undefine_val -9e20:4 -grib_out c:/python27/scripts/jpp/grib2shape/ingrib/CENTCOM_DRAFT_VIS_$_.grb");
      }
      
-     
+      
