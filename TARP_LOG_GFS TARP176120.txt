@@ -1,0 +1,22 @@
+finished thread: 4 for OAMS
+ was processed at Wed Jun 17 14:36:46 2020 
+finished thread: 1 for KQSP
+ was processed at Wed Jun 17 14:36:46 2020 
+finished thread: 3 for OAUZ
+ was processed at Wed Jun 17 14:36:46 2020 
+finished thread: 2 for OADZ
+ was processed at Wed Jun 17 14:36:46 2020 
+finished thread: 0 for KQA7
+ was processed at Wed Jun 17 14:36:48 2020 
+total run time was: was processed at Wed Jun 17 14:36:48 2020 
+finished thread: 2 for OADZ
+ was processed at Wed Jun 17 15:30:54 2020 
+finished thread: 0 for KQA7
+ was processed at Wed Jun 17 15:30:54 2020 
+finished thread: 3 for OAUZ
+ was processed at Wed Jun 17 15:30:55 2020 
+finished thread: 1 for KQSP
+ was processed at Wed Jun 17 15:30:55 2020 
+finished thread: 4 for OAMS
+ was processed at Wed Jun 17 15:30:55 2020 
+total run time was: was processed at Wed Jun 17 15:30:55 2020 

@@ -1,0 +1,9 @@
+finished thread: 1 for KQSP
+ was processed at Wed Jun 17 14:03:23 2020 
+finished thread: 4 for OAMS
+ was processed at Wed Jun 17 14:03:23 2020 
+finished thread: 3 for OAUZ
+ was processed at Wed Jun 17 14:03:23 2020 
+finished thread: 2 for OADZ
+ was processed at Wed Jun 17 14:03:23 2020 
+total run time was: was processed at Wed Jun 17 14:03:23 2020 

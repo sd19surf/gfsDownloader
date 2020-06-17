@@ -1,0 +1,24 @@
+#-------------------#
+# file properties   #
+#-------------------#
+
+%fileInfo = ('filepath', 'C:\\Perl64\\Scripts\\gfsDownloader\\',
+             'modelName', 'gfs.t',
+             'log directory','C:\\Perl64\\Scripts\\gfsDownloader\\',
+             'Number Of Files', 41,
+             'log name','GFS TARP',
+             'output directory','C:\\Coldfusion2016\\cfusion\\wwwroot\\wxdata\\products\\');
+
+
+$ageToProcessEpochSecs = 7200; #2 hours
+$timeToWaitForNewFiles = 60; #loop the function
+
+$station_list          = 'station_list_shrt.csv';
+
+#----------------------------------------------------#
+# model variables                                    #
+#                                                    #
+# List of model variables to add to the json output  #
+# ---------------------------------------------------#
+
+%listOfVariables = ('variables',"UGRD|VGRD|RH|VIS|TMP|APCP|TMAX");
